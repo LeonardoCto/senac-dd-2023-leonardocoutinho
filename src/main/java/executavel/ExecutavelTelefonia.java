@@ -3,6 +3,7 @@ package executavel;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.dao.telefonia.EnderecoDAO;
 import model.vo.telefonia.Cliente;
 import model.vo.telefonia.Endereco;
 import model.vo.telefonia.Telefone;
@@ -11,7 +12,16 @@ public class ExecutavelTelefonia {
 
 	public static void main(String[] args) {
 		
-		Endereco endereco1 = new Endereco("88000123", "Mauro Ramos", "10", "Centro", "Florianópolis", "SC");
+		Endereco endereco1 = new Endereco("88000123", "Nereu Ramos", "10", "Centro", "Florianópolis", "SC");
+		
+		EnderecoDAO salvadorDeEnderecos = new EnderecoDAO();
+		salvadorDeEnderecos.inserir(endereco1);
+		
+		if(endereco1.getId() != null) {
+			System.out.println("Novo endereço cadastrado");
+		}else {
+			System.out.println("Erro ao cadastrar endereço");
+		}
 		
 		List<Telefone> telefonesDoSocrates = new ArrayList<Telefone>();
 		Telefone telefone1 = new Telefone("48", "32328888", true, false);

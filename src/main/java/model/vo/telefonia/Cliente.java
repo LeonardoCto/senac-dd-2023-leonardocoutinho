@@ -78,8 +78,11 @@ public class Cliente {
 
 	
 	public String toString() {
-		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", telefones=" + telefones + ", ativo=" + ativo
-				+ ", endereco=" + endereco + "]";
+		return "\n Cliente Nome: " + this.getNome()
+				+ "\n Cpf: " + this.getCpf() 
+				+ "\n Telefones " + this.getTelefones() 
+				+ "\n Ativo: " + this.isAtivo()
+				+ "\n Endereco" + this.getEndereco();
 	}
 
 	public Integer getId() {

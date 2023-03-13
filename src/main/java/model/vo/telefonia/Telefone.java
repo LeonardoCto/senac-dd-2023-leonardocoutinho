@@ -93,10 +93,10 @@ public class Telefone {
 	}
 	
 	public String toString() {
-		return "Telefone [ddd=" + ddd +
-				"/n, numero=" + numero + 
-				"/n, ativo=" + ativo + ","
-						+ "/n movel=" + movel + "]";
+		return "\n DDD: " + this.getDdd() 
+				+ "\n Numero: " + this.getNumero() 
+				+ "\n Ativo: " + this.isAtivo() 
+				+ "\n Movel: " + this.isMovel();
 	}
 	
 }
