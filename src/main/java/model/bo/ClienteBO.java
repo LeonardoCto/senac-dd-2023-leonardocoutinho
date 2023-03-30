@@ -14,8 +14,8 @@ public class ClienteBO {
 
 			throw new CpfJaUtilizadoException("CPF informado já foi utilizado!");
 		}
-		 if(novoCliente.getEndereco() == null) {
-			 throw new EnderecoInvalidoException("Endereco não informado!")
+		 if(novoCliente.getEndereco() == null || novoCliente.getEndereco().getId() == null) {
+			 throw new EnderecoInvalidoException("Endereco não informado!");
 		 }
 		// CASO CPF NAO UTILIZADO -> SALVAR
 		return dao.inserir(novoCliente);
