@@ -1,20 +1,20 @@
 package model.vo.telefonia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-	
+
 	private Integer id;
 	private String nome;
 	private String cpf;
-	private List<Telefone> telefones; 
+	private List<Telefone> telefones;
 	private boolean ativo;
 	private Endereco endereco;
 	
 	public Cliente() {
-		
+		this.telefones = new ArrayList<>();
 	}
-	
 	
 	public Cliente(Integer id, String nome, String cpf, List<Telefone> telefones, boolean ativo, Endereco endereco) {
 		super();
@@ -27,6 +27,7 @@ public class Cliente {
 	}
 
 
+
 	public Cliente(String nome, String cpf, List<Telefone> telefones, boolean ativo, Endereco endereco) {
 		super();
 		this.nome = nome;
@@ -34,6 +35,15 @@ public class Cliente {
 		this.telefones = telefones;
 		this.ativo = ativo;
 		this.endereco = endereco;
+	}
+	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -76,23 +86,9 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
-	
+	@Override
 	public String toString() {
-		return "\n Cliente Nome: " + this.getNome()
-				+ "\n Cpf: " + this.getCpf() 
-				+ "\n Telefones " + this.getTelefones() 
-				+ "\n Ativo: " + this.isAtivo()
-				+ "\n Endereco" + this.getEndereco();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		return nome + " (" + cpf + ")";
 	}
 	
-	
-
 }

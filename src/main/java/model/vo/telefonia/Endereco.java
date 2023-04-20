@@ -1,8 +1,8 @@
 package model.vo.telefonia;
 
 public class Endereco {
-
-	// ATRIBUTOS
+	
+	//Atributos
 	private Integer id;
 	private String cep;
 	private String rua;
@@ -10,14 +10,12 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String estado;
-
-	// CONSTRUTOR
-
+	
+	//Construtores
 	public Endereco() {
-
+		
 	}
 	
-
 	public Endereco(Integer id, String cep, String rua, String numero, String bairro, String cidade, String estado) {
 		super();
 		this.id = id;
@@ -29,7 +27,6 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-
 	public Endereco(String cep, String rua, String numero, String bairro, String cidade, String estado) {
 		super();
 		this.cep = cep;
@@ -40,7 +37,16 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	// METODOS GETTER AND SETTERS
+	//Métodos
+	
+	//Métodos getter e setters
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getCep() {
 		return cep;
@@ -90,20 +96,14 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
+	@Override
 	public String toString() {
-		return "\n Cep: " + this.getCep() 
-				+ "\n Rua: " + this.getRua() 
-				+ "\n Numero: " + this.getNumero() 
-				+ "\n Bairro: " + this.getBairro() 
-				+ "\n Cidade: " + this.getCidade() 
-				+ "\n Estado: " + this.getEstado();
+		return getEnderecoResumido();
+//		return "Endereco [cep=" + cep + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cidade="
+//				+ cidade + ", estado=" + estado + "]";
+	}
+
+	public String getEnderecoResumido() {
+		return rua + " nº" + numero + ", " + bairro + ", " + cidade + "/" + estado;
 	}
 }
